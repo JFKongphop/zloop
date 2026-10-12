@@ -1,0 +1,32 @@
+[package]
+name = "zloop-wallet"
+version = "0.1.0"
+edition = "2024"
+description = "ZLOOP's shielded wallet service: receives bets, reads memos, pays winners"
+license = "MIT"
+
+[dependencies]
+anyhow = "1"
+async-trait = "0.1"
+bip0039 = { version = "0.14", features = ["std"] }
+clap = { version = "4.5", features = ["derive"] }
+futures-util = "0.3"
+hex = "0.4"
+rand = { version = "0.8", default-features = false }
+rusqlite = "0.37"
+rustls = { version = "0.23", default-features = false, features = ["ring"] }
+secrecy = "0.8"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+sha2 = "0.10"
+tokio = { version = "1", features = ["macros", "rt-multi-thread"] }
+tonic = { version = "0.14", features = ["gzip", "tls-webpki-roots"] }
+
+zcash_address = "0.13.0"
+zcash_client_backend = { version = "0.24.0", features = ["lightwalletd-tonic-tls-webpki-roots", "orchard", "sync"] }
+zcash_client_sqlite = { version = "0.22.0", features = ["orchard", "unstable"] }
+zcash_keys = { version = "0.16.1", features = ["orchard", "sapling"] }
+zcash_primitives = "0.30.0"
+zcash_proofs = { version = "0.30.0", features = ["bundled-prover"] }
+zcash_protocol = "0.10.3"
+zip321 = "0.9"
