@@ -1,0 +1,17 @@
+{
+  "name": "zloop-server",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "ZLOOP market server, audit tool and agent tool. No dependencies: Node 24+ runs the TypeScript directly.",
+  "engines": { "node": ">=24" },
+  "scripts": {
+    "start": "node src/main.ts",
+    "dev": "ZLOOP_FAKE_WALLET=1 ZLOOP_ADMIN_TOKEN=dev node src/main.ts",
+    "test": "node --test test/*.test.ts",
+    "audit": "node src/audit.ts",
+    "agent": "node src/agent.ts",
+    "agents": "node src/agents.ts",
+    "mcp": "node src/mcp.ts"
+  }
+}
